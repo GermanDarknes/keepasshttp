@@ -19,6 +19,7 @@ using KeePass;
 using KeePassLib.Cryptography.PasswordGenerator;
 using KeePassLib.Cryptography;
 using KeePass.Util.Spr;
+using Nager.PublicSuffix;
 
 namespace KeePassHttp {
     public sealed partial class KeePassHttpExt : Plugin
@@ -56,6 +57,14 @@ namespace KeePassHttp {
                 // ignore exception, not a URI, assume input is host
             }
             return scheme;
+        }
+
+        private string GetDomainName(string uri)
+        {
+            var domainParser = new DomainParser(new WebTldRuleProvider());
+            var host = domainParser.Parse(uri).RegistrableDomain;
+
+            return host;
         }
 
         private bool canShowBalloonTips()
@@ -202,6 +211,13 @@ namespace KeePassHttp {
                     if (formHost.EndsWith(uHost))
                         return true;
                 }
+
+                if (configOpt.MatchDomainName && Uri.CheckHostName(formHost).Equals(UriHostNameType.Dns))
+                {
+                    if (entryUrl.Contains(GetDomainName(formHost)))
+                        return true;
+                }
+
                 return formHost.Contains(title) || (entryUrl != null && formHost.Contains(entryUrl));
             };
 
