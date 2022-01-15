@@ -55,7 +55,7 @@ namespace KeePassHttp
         Dictionary<string, RequestHandler> handlers = new Dictionary<string, RequestHandler>();
 
         //public string UpdateUrl = "";
-        public override string UpdateUrl { get { return "https://raw.githubusercontent.com/pfn/keepasshttp/master/latest-version.txt"; } }
+        public override string UpdateUrl { get { return "https://raw.githubusercontent.com/GermanDarknes/keepasshttp/master/latest-version.txt"; } }
 
         private SearchParameters MakeSearchParameters()
         {
