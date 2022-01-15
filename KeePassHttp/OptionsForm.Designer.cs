@@ -59,6 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.credAllowUpdatesCheckbox = new System.Windows.Forms.CheckBox();
             this.credAllowAccessCheckbox = new System.Windows.Forms.CheckBox();
+            this.matchDomainNameCheckbox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -104,6 +105,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.matchDomainNameCheckbox);
             this.tabPage1.Controls.Add(this.SortByUsernameRadioButton);
             this.tabPage1.Controls.Add(this.SortByTitleRadioButton);
             this.tabPage1.Controls.Add(this.hideExpiredCheckbox);
@@ -116,7 +118,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(402, 497);
+            this.tabPage1.Size = new System.Drawing.Size(402, 472);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -124,7 +126,7 @@
             // SortByUsernameRadioButton
             // 
             this.SortByUsernameRadioButton.AutoSize = true;
-            this.SortByUsernameRadioButton.Location = new System.Drawing.Point(7, 147);
+            this.SortByUsernameRadioButton.Location = new System.Drawing.Point(7, 182);
             this.SortByUsernameRadioButton.Name = "SortByUsernameRadioButton";
             this.SortByUsernameRadioButton.Size = new System.Drawing.Size(171, 17);
             this.SortByUsernameRadioButton.TabIndex = 19;
@@ -135,26 +137,26 @@
             // SortByTitleRadioButton
             // 
             this.SortByTitleRadioButton.AutoSize = true;
-            this.SortByTitleRadioButton.Location = new System.Drawing.Point(7, 170);
+            this.SortByTitleRadioButton.Location = new System.Drawing.Point(7, 205);
             this.SortByTitleRadioButton.Name = "SortByTitleRadioButton";
             this.SortByTitleRadioButton.Size = new System.Drawing.Size(141, 17);
             this.SortByTitleRadioButton.TabIndex = 18;
             this.SortByTitleRadioButton.TabStop = true;
             this.SortByTitleRadioButton.Text = "Sort found entries by &title";
             this.SortByTitleRadioButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // hideExpiredCheckbox
-            //
+            // 
             this.hideExpiredCheckbox.AutoSize = true;
             this.hideExpiredCheckbox.Location = new System.Drawing.Point(7, 88);
             this.hideExpiredCheckbox.Name = "hideExpiredCheckbox";
-            this.hideExpiredCheckbox.Size = new System.Drawing.Size(256, 17);
+            this.hideExpiredCheckbox.Size = new System.Drawing.Size(152, 17);
             this.hideExpiredCheckbox.TabIndex = 17;
-            this.hideExpiredCheckbox.Text = "Don't return e&xpired entries";
+            this.hideExpiredCheckbox.Text = "Don\'t return e&xpired entries";
             this.hideExpiredCheckbox.UseVisualStyleBackColor = true;
-            //
+            // 
             // matchSchemesCheckbox
-            //
+            // 
             this.matchSchemesCheckbox.AutoSize = true;
             this.matchSchemesCheckbox.Location = new System.Drawing.Point(7, 111);
             this.matchSchemesCheckbox.Name = "matchSchemesCheckbox";
@@ -169,7 +171,7 @@
             this.removePermissionsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.removePermissionsButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.removePermissionsButton.Location = new System.Drawing.Point(14, 239);
+            this.removePermissionsButton.Location = new System.Drawing.Point(14, 274);
             this.removePermissionsButton.Name = "removePermissionsButton";
             this.removePermissionsButton.Size = new System.Drawing.Size(372, 28);
             this.removePermissionsButton.TabIndex = 16;
@@ -191,7 +193,7 @@
             // 
             this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeButton.Location = new System.Drawing.Point(14, 205);
+            this.removeButton.Location = new System.Drawing.Point(14, 240);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(372, 28);
             this.removeButton.TabIndex = 11;
@@ -430,6 +432,17 @@
             this.credAllowAccessCheckbox.Text = "Always allow &access to entries";
             this.credAllowAccessCheckbox.UseVisualStyleBackColor = true;
             // 
+            // matchDomainNameCheckbox
+            // 
+            this.matchDomainNameCheckbox.AutoSize = true;
+            this.matchDomainNameCheckbox.Location = new System.Drawing.Point(7, 147);
+            this.matchDomainNameCheckbox.Name = "matchDomainNameCheckbox";
+            this.matchDomainNameCheckbox.Size = new System.Drawing.Size(395, 30);
+            this.matchDomainNameCheckbox.TabIndex = 20;
+            this.matchDomainNameCheckbox.Text = "&Match domain name instead of complete url\r\nentries with same domain name (admin." +
+    "test.com, dev.test.com, ...) are returned";
+            this.matchDomainNameCheckbox.UseVisualStyleBackColor = true;
+            // 
             // OptionsForm
             // 
             this.AcceptButton = this.okButton;
@@ -490,5 +503,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox returnStringFieldsWithKphOnlyCheckBox;
+        private System.Windows.Forms.CheckBox matchDomainNameCheckbox;
     }
 }

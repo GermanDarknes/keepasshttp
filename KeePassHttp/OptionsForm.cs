@@ -43,6 +43,7 @@ namespace KeePassHttp
             credSearchInAllOpenedDatabases.Checked = _config.SearchInAllOpenedDatabases;
             hideExpiredCheckbox.Checked = _config.HideExpired;
             matchSchemesCheckbox.Checked = _config.MatchSchemes;
+            matchDomainNameCheckbox.Checked = _config.MatchDomainName;
             returnStringFieldsCheckbox.Checked = _config.ReturnStringFields;
             returnStringFieldsWithKphOnlyCheckBox.Checked = _config.ReturnStringFieldsWithKphOnly;
             SortByUsernameRadioButton.Checked = _config.SortResultByUsername;
@@ -63,6 +64,7 @@ namespace KeePassHttp
             _config.SearchInAllOpenedDatabases = credSearchInAllOpenedDatabases.Checked;
             _config.HideExpired = hideExpiredCheckbox.Checked;
             _config.MatchSchemes = matchSchemesCheckbox.Checked;
+            _config.MatchDomainName = matchDomainNameCheckbox.Checked;
             _config.ReturnStringFields = returnStringFieldsCheckbox.Checked;
             _config.ReturnStringFieldsWithKphOnly = returnStringFieldsWithKphOnlyCheckBox.Checked;
             _config.SortResultByUsername = SortByUsernameRadioButton.Checked;
