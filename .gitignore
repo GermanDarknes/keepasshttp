@@ -10,3 +10,4 @@ create-plgx.bat
 /KeePassHttp/KeePassHttp.dll
 .vs/
 *.plgx
+mono/KeePassHttp.dll
