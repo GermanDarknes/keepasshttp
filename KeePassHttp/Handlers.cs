@@ -163,7 +163,12 @@ namespace KeePassHttp {
                     db.RootGroup.SearchEntries(parms, listEntries);
                     foreach (var le in listEntries)
                     {
-                        listResult.Add(new PwEntryDatabase(le, db));
+                        PwEntryDatabase pwEntry = new PwEntryDatabase(le, db);
+
+                        if (listResult.Where(p => p.entry == le).Count() == 0)
+                        {
+                            listResult.Add(new PwEntryDatabase(le, db));
+                        }
                     }
                     searchHost = searchHost.Substring(searchHost.IndexOf(".") + 1);
                     
