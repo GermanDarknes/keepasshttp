@@ -155,7 +155,8 @@ namespace KeePassHttp {
             {
                 searchHost = origSearchHost;
                 //get all possible entries for given host-name
-                while (listResult.Count == listCount && (origSearchHost == searchHost || searchHost.IndexOf(".") != -1))
+                while ((listResult.Count == listCount && (origSearchHost == searchHost || searchHost.IndexOf(".") != -1)) ||
+                        (configOpt.MatchDomainName && (origSearchHost == searchHost || searchHost.IndexOf(".") != -1)))
                 {
                     parms.SearchString = String.Format("^{0}$|/{0}/?", searchHost);
                     var listEntries = new PwObjectList<PwEntry>();
